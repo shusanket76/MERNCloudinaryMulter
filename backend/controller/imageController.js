@@ -12,6 +12,7 @@ const uploadImage = async (req, res, next) => {
       cloudinaryResponse = await cloudinary.uploader.upload(req.file.path, {
         folder: "clothes",
       });
+      console.log(cloudinaryResponse);
       if (cloudinaryResponse?.url) {
         const delpic = path.join(
           __dirname,
